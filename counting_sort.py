@@ -1,8 +1,10 @@
 
-array1 = [2,3,1,5,3,2,4,3,1,4,5,3,1,4,2,5,2]
-count_array = [0,0,0,0,0]     #the count_array needs to have as many values as there are different values in the array we wanna sort
+array1 = [2,3,1,5,3,2,4,3,1,4,5,3,1,4,2,5,2] 
 
-def counting_sort(array, count_array):
+def counting_sort(array):
+
+  count_array = [0] * max(array)  #the count_array needs to have as many values as there are different values in the array we wanna sort
+
   for i in array:
     count_array[i-1] +=1    #the value is the index of the count_array that gets added +1
 
@@ -15,4 +17,4 @@ def counting_sort(array, count_array):
   return sorted_array
 
 
-print(counting_sort(array1, count_array))
+print(counting_sort(array1))
