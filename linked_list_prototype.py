@@ -1,3 +1,4 @@
+#first try creating a linked list
 
 class Node:
   def __init__(self, value):
@@ -19,6 +20,7 @@ node4 = Node(55)
 node1.pointer = node2
 node2.pointer = node3
 node3.pointer = node4
+
 
 
 node1.show_list()
