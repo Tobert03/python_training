@@ -37,11 +37,17 @@ class Node:
       index -= 1
 
   def del_node(head, node_index):     #input = head object and index of the node u want to delete / deletes the node
+    
+    middle_node = Node.get_node(head, node_index)
+    if head == middle_node:
+      return head.next
+    
     left_node = Node.get_node(head, node_index - 1)
     right_node = Node.get_node(head, node_index + 1)
-    middle_node = Node.get_node(head, node_index)
+
     left_node.pointer = right_node
     del middle_node
+    return head
       
   def insert_node(head, name, index, value):    #input = head object, name of the node we creating, index where to insert the new node and value of the node / inserts a new node at a defined index
     name = Node(value)
@@ -74,12 +80,13 @@ node3.pointer = node4
 
 #node1.show_list()
 
-print("lowest value: ",Node.find_lowest_value(node1).value)
+#print("lowest value: ",Node.find_lowest_value(node1).value)
 
 #print(Node.get_node(node1, 2).value)
 
-#Node.del_node(node1, 3)
+node1 = Node.del_node(node1, 3)
 
 #Node.insert_node(node1, "node5", 3, 33)
 
+Node.show_list(node1)
 #Node.show_list(node1)
